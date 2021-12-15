@@ -1,0 +1,54 @@
+{
+  "name": "afc-bot",
+  "version": "1.0.0",
+  "repository": "https://github.com/shun-ueda/afc-bot.git",
+  "license": "MIT",
+  "author": "Shun Ueda <shu225@lehigh.edu>",
+  "main": "src/index.ts",
+  "scripts": {
+    "compile": "webpack",
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
+    "lint": "eslint src/*.ts --fix && prettier src/*.ts --write",
+    "test": "yarn compile && yarn start",
+    "start": "node prod/index.js",
+    "transpile": "babel out.js -d lib",
+    "esbuild": "esbuild src/index.ts --bundle --outfile=out.js --platform=node --external:electron --minify --target=esnext --format=esm"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run lint"
+    ]
+  },
+  "dependencies": {
+    "discord.js": "^13.3.0",
+    "dotenv": "^8.2.0",
+    "download": "^8.0.0",
+    "json-loader": "^0.5.7",
+    "node-emoji": "^1.11.0",
+    "ts-loader": "^9.2.6",
+    "tslib": "^2.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@types/dotenv": "^8.2.0",
+    "@types/download": "^8.0.1",
+    "@types/node": "^16.11.6",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "esbuild": "^0.13.15",
+    "eslint": "^7.20.0",
+    "eslint-config-google": "^0.14.0",
+    "gts": "^3.1.0",
+    "husky": "^5.0.9",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.1.5",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
