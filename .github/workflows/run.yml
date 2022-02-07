@@ -1,0 +1,27 @@
+name: Run
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron:  '0 */6 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ['16']
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: |
+          touch .env
+          echo SECRET=${{ secrets.SECRET }} >> .env
+          echo IMAGE_HIDER_URL=${{ secrets.IMAGE_HIDER_URL }} >> .env
+          echo IMAGE_HIDER_CHANNEL=${{ secrets.IMAGE_HIDER_CHANNEL }} >> .env
+          npm ci
+          npm run test
