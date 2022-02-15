@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-    - cron:  '0 */6 * * *'
+    - cron:  '0 6 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,5 +23,5 @@ jobs:
           echo SECRET=${{ secrets.SECRET }} >> .env
           echo IMAGE_HIDER_URL=${{ secrets.IMAGE_HIDER_URL }} >> .env
           echo IMAGE_HIDER_CHANNEL=${{ secrets.IMAGE_HIDER_CHANNEL }} >> .env
-          npm ci
-          npm run test
+          yarn
+          yarn test
