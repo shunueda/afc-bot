@@ -153,7 +153,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["convert-source-map", "npm:1.8.0"],
             ["debug", "virtual:2ad756de169bf72aafda43d1e2327e0cf7bcb204e0a9798d149f3f82af2946c06104e76120b9f2fefe79c9a7f4dc97edc7d3dde4b1a890339a9f2f672bc5b209#npm:4.3.3"],
             ["gensync", "npm:1.0.0-beta.2"],
-            ["json5", "npm:2.2.0"],
+            ["json5", "npm:2.2.3"],
             ["semver", "npm:6.3.0"]
           ],
           "linkType": "HARD",
@@ -5686,7 +5686,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-prettier", "virtual:eb46e03e61e317e4aaca60c560d2f402582ab8426dd68c1eb7dd850dc3b1bd6eb549b7bda11114ddbfe31285e38a2b04f29f071f0bd707a9b2b1f3f597df147c#npm:3.4.1"],
             ["execa", "npm:5.1.1"],
             ["inquirer", "npm:7.3.3"],
-            ["json5", "npm:2.2.0"],
+            ["json5", "npm:2.2.3"],
             ["meow", "npm:9.0.0"],
             ["ncp", "npm:2.0.0"],
             ["prettier", "npm:2.5.1"],
@@ -6438,11 +6438,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["json5", [
-        ["npm:2.2.0", {
-          "packageLocation": "./.yarn/cache/json5-npm-2.2.0-da49dc7cb5-e88fc5274b.zip/node_modules/json5/",
+        ["npm:2.2.3", {
+          "packageLocation": "./.yarn/cache/json5-npm-2.2.3-9962c55073-2a7436a933.zip/node_modules/json5/",
           "packageDependencies": [
-            ["json5", "npm:2.2.0"],
-            ["minimist", "npm:1.2.5"]
+            ["json5", "npm:2.2.3"]
           ],
           "linkType": "HARD",
         }]
